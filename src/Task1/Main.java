@@ -11,12 +11,13 @@ public class Main {
 
 
         int[] intlist = {1, 2, 5, 16, -1, -2, 0, 32, 3, 5, 8, 23, 4};
+        List<Integer> newList = new ArrayList<>();
 
-        //можно использовать Arrays.sort(intlist), но мы сортируем вручную
         System.out.println("Положительные,четные числа в массиве, отсортированные по возрастанию: ");
+
         for (int i = 0; i < intlist.length; i++) {
             if (intlist[i] > 0 && intlist[i] % 2 == 0) {
-                System.out.println(intlist[i]);
+                newList.add(intlist[i]); //создаем новый лист , куда сохраняем отфильтрованный массив
             }
             //сортируем
             for (int j = intlist.length - 1; j > 0; j--) {
@@ -33,6 +34,7 @@ public class Main {
                 }
             }
         }
+        System.out.println(newList);
     }
 }
 
