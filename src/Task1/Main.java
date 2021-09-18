@@ -11,14 +11,25 @@ public class Main {
 
 
         int[] intlist = {1, 2, 5, 16, -1, -2, 0, 32, 3, 5, 8, 23, 4};
-        List<Integer> newList = new ArrayList<>();
 
         System.out.println("Положительные,четные числа в массиве, отсортированные по возрастанию: ");
 
+        //получаем длину нового массива
+        int count = 0;
         for (int i = 0; i < intlist.length; i++) {
             if (intlist[i] > 0 && intlist[i] % 2 == 0) {
-                newList.add(intlist[i]); //создаем новый лист , куда сохраняем отфильтрованный массив
+                count++;
             }
+        }
+
+        int[] newList = new int[count]; // создаем новый массив
+        int index = 0;
+        for (int i = 0; i < intlist.length; i++) {
+            if (intlist[i] > 0 && intlist[i] % 2 == 0) {
+                newList[index] = intlist[i];
+                index++;
+            }
+
             //сортируем
             for (int j = intlist.length - 1; j > 0; j--) {
                 for (int с = 0; с < j; с++) {
@@ -34,7 +45,10 @@ public class Main {
                 }
             }
         }
-        System.out.println(newList);
+        // вывод отфильтрованного и отсортированного массива в консоль
+        for (int y = 0; y < newList.length; y++) {
+            System.out.println(newList[y]);
+        }
     }
 }
 
